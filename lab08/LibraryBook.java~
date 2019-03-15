@@ -1,0 +1,186 @@
+// header comment
+public class LibraryBook
+{
+  // properties
+  private String title;
+  private String author;
+  private String dueDate;
+  private int timesLoaned;
+  private boolean loan;
+  
+  // constructors
+  //regular constructor
+  public LibraryBook(String bookName, String authorName) 
+  {
+    title = bookName;
+    author = authorName;
+    dueDate = "";
+    timesLoaned = 0;
+    loan = false;
+  }
+  //copy constructor
+  public LibraryBook(LibraryBook forCheck)
+  {
+    title = forCheck.getTitle();
+    author = forCheck.getAuthor();
+    dueDate = forCheck.getDueDate();
+    timesLoaned = forCheck.getTimesLoaned();
+    loan = forCheck.onLoan();
+  }
+  
+  
+  // methods
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  
+  public boolean equals(LibraryBook forCheck)
+  {
+      if ((title.equals(forCheck.getTitle())) && (author.equals(forCheck.getAuthor())))
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public String toString() 
+  {
+    //variables
+    String output;
+    
+    //program code
+    output = (" The Title is : " + title + "\n The author is : " + author + "\n The due date is : " + dueDate + "\n The number of time loaned is : " + timesLoaned);
+    return output;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public boolean onLoan() 
+  {
+    return loan;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public int getTimesLoaned() 
+  {
+    return timesLoaned;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public String getDueDate() 
+  {
+    return dueDate;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public void loanBook(String dueDateNew) 
+  {
+    dueDate = dueDateNew;
+    timesLoaned++;
+    loan = true;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public void returnBook() 
+  {
+    loan = false;
+    dueDate = "";
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public String getAuthor() 
+  {
+    return author;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public String getTitle() 
+  {
+    return title;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public boolean hasSameTitle(LibraryBook forCheck) 
+  {
+    if (title.equals(forCheck.getTitle()))
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public boolean hasSameAuthor(LibraryBook forCheck) 
+  {
+    if (author.equals(forCheck.getAuthor()))
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  
+  
+}

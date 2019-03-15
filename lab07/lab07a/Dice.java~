@@ -1,0 +1,66 @@
+// header comment
+public class Dice
+{
+  // properties
+  Die die1;
+  Die die2;
+  // constructors
+  
+  // methods
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public void roll() 
+  {
+    //program code
+    die1 = new Die();
+    die2 = new Die();
+    die1.roll();
+    die2.roll();
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public int getDie1FaceValue() 
+  {
+    //program code
+    return die1.getFaceValue();
+  }
+  
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public int getDie2FaceValue() 
+  {
+        //program code
+    return die2.getFaceValue();
+  }
+  
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public int getDiceTotal() 
+  {
+    //variables
+    int diceTotal;
+    
+        //program code
+    diceTotal = die1.getFaceValue() + die2.getFaceValue();
+    return diceTotal;
+  }
+}

@@ -1,0 +1,216 @@
+// header comment
+public class Library
+{
+  //properties
+  LibraryBook b1;
+  LibraryBook b2;
+  LibraryBook b3;
+  LibraryBook b4;
+  LibraryBook b5;
+  
+  //constructors
+  public Library()
+  {
+    b1 = null;
+    b2 = null;
+    b3 = null;
+    b4 = null;
+  }
+  //methods
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public boolean isEmpty()
+  {
+    if ((b1 == null) && (b2 == null) && (b3 == null) && (b4 == null))
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public String toString()
+  {
+    //variables
+    String output;
+    
+    //program code
+    if (isEmpty()) 
+    {
+      output = " There are no books in the libarary.";
+    }
+    else
+    {
+      if (b1 == null)
+      {
+        output = " No book in this slot." + "\n";
+      }
+      else
+      {
+        output = b1.toString() + "\n";
+      }
+      
+      if (b2 == null)
+      {
+        output = output + " No book in this slot." + "\n";
+      }
+      else
+      {
+        output = output + b2.toString() + "\n";
+      }
+      
+      if (b3 == null)
+      {
+        output = output + " No book in this slot." + "\n";
+      }
+      else
+      {
+        output = output + b3.toString() + "\n";
+      }
+      
+      if (b4 == null)
+      {
+        output = output + " No book in this slot.";
+      }
+      else
+      {
+        output = output + b4.toString();
+      }
+      
+    }
+    return output;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public void add(String bookName, String authorName)
+  {
+    if (b1 == null)
+    {
+      b1 = new LibraryBook(bookName, authorName);
+    }
+    else if (b2 == null)
+    {
+      b2 = new LibraryBook(bookName, authorName);
+    }
+    else if (b3 == null)
+    {
+      b3 = new LibraryBook(bookName, authorName);
+    }
+    else if (b4 == null)
+    {
+      b4 = new LibraryBook(bookName, authorName);
+    }
+    else
+    {
+      System.out.println(" This book could not be added because no slot is available to add book.");
+    }
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public void remove(LibraryBook forCheck)
+  {
+    boolean check;
+    check = false;
+    if (!(b1 == null))
+    {
+      if (b1.equals(forCheck))
+      {
+        b1 = null;
+        check = true;
+      }
+    }
+    if (!(b2 == null))
+    {
+      if (b2.equals(forCheck))
+      {
+        b2 = null;
+        check = true;
+      }
+    }
+    if (!(b3 == null))
+    {
+      if (b3.equals(forCheck))
+      {
+        b3 = null;
+        check = true;
+      }
+    }
+    if (!(b4 == null))
+    {
+      if (b4.equals(forCheck))
+      {
+        b4 = null;
+        check = true;
+      }
+    }
+    if (!check)
+    {
+      System.out.println("This book is not in the libarary.");
+    }
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public LibraryBook findByTitle(String bookName)
+  {
+    b5 = null;
+    if (!(b1 == null))
+    {
+      if (bookName.equals(b1.getTitle()))
+      {
+        b5 = b1;
+      }
+    }
+    if (!(b2 == null))
+    {
+      if (bookName.equals(b2.getTitle()))
+      {
+        b5 = b2;
+      }
+    }
+    if (!(b3 == null))
+    {
+      if (bookName.equals(b3.getTitle()))
+      {
+        b5 = b3;
+      }
+    }
+    if (!(b4 == null))
+    {
+      if (bookName.equals(b4.getTitle()))
+      {
+        b5 = b4;
+      }
+    }
+    return b5;
+  }
+  
+  
+}

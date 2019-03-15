@@ -1,0 +1,42 @@
+// header comment
+public class DiceGame
+{
+  // properties
+  Dice dices;
+  
+  // constructors
+  
+  // methods
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public int play() 
+  {
+    //variables
+    int rolls;
+    boolean check;
+    
+    //program code
+    dices = new Dice();
+    rolls = 0;
+    check = true;
+    
+    
+    while(check)
+    {
+      dices.roll();
+      rolls++;
+      //System.out.println( die1.getFaceValue() + " " + die2.getFaceValue());
+      if((dices.getDie1FaceValue() == 6) && (dices.getDie2FaceValue() == 6))
+      {
+        check = false;
+      }
+    }
+    return rolls;
+  }
+  
+}

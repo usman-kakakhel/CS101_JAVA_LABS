@@ -1,0 +1,59 @@
+// header comment
+public class TestDie
+{
+  // properties
+  private Die die1;
+  private Die die2;
+  private int rolls;
+  
+  // constructors
+  
+  // methods
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public String toString() 
+  { 
+    //variables
+    String output;
+    //program code
+    output = "Number of rolls done in testing: " + rolls;
+    return(output);
+  }
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public void testingDies() 
+  {
+    //variables
+    boolean check;
+    
+    //program code
+    die1 = new Die();
+    die2 = new Die();
+    rolls = 0;
+    check = true;
+    
+    
+    while(check)
+    {
+      die1.roll();
+      die2.roll();
+      rolls++;
+      //System.out.println( die1.getFaceValue() + " " + die2.getFaceValue());
+      if((die1.getFaceValue() == 6) && (die2.getFaceValue() == 6))
+      {
+        check = false;
+      }
+    }
+    
+  }
+  
+}

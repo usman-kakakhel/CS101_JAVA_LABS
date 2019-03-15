@@ -1,0 +1,99 @@
+import java.util.ArrayList;
+// Makýng a library
+public class Library
+{
+  //properties
+  LibraryBook b5;
+  LibraryBook b6;
+  ArrayList<LibraryBook>  arrayBooks;
+  
+  //constructors
+  public Library()
+  {
+    arrayBooks = new ArrayList<LibraryBook>();
+  }
+  //methods
+  
+  /**
+   * Checks if the lýbrary books ýn thýs lýbrary are null.
+   * @return returns a boolean whether lýbrary ýs empty true, or not empty false.
+   */
+  public boolean isEmpty()
+  {
+    if (arrayBooks.size() == 0)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  
+  /**
+   * This outputs the propertýes of the object ýnstance
+   * @return output returns the strýng whých has property ýnformatýon.
+   */
+  public String toString()
+  {
+    //variables
+    String output;
+    
+    //program code
+    if (isEmpty()) 
+    {
+      output = " There are no books in the libarary.";
+    }
+    else
+    {
+      output = arrayBooks.toString();
+    }
+    return output;
+  }
+  
+  /**
+   * Adds books ýn the lýbrary
+   * @param bookName is name of book requýred.
+   * @param authorName is name of author requýred.
+   */
+  public void add(String bookName, String authorName)
+  {
+    arrayBooks.add( new LibraryBook(bookName, authorName));
+  }
+  
+  /**
+   * sets property to null for an object
+   * @param forCheck makes another ýnstance of Lýbrary book.
+   */
+  public void remove(LibraryBook forCheck)
+  {
+    for (int i = 0; i < arrayBooks.size(); i++)
+    {
+      if (arrayBooks.get(i) == forCheck)
+      {
+        arrayBooks.remove(i);
+      }
+    }
+    
+  }
+  
+  /**
+   * Fýnds ýnstance of the book wýth same týtle.
+   * @param bookName ýs the name of the book to fýnd the ýnstance.
+   * @return b5 returns object wýth same name acquýred
+   */
+  public LibraryBook findByTitle(String bookName)
+  {
+    b6 = new LibraryBook(bookName, "");
+    for (int i = 0; i < arrayBooks.size(); i++)
+    {
+      if (arrayBooks.get(i).hasSameTitle(b6))
+      {
+        return arrayBooks.get(i);
+      }
+    }
+    return null;
+  }
+  
+  
+}

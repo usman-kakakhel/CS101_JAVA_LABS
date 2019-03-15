@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+/**
+ * __lab08___ 
+ * @author __Mian Usman Naeem Kakakhel___
+ * @version __29-11-2017__
+ */ 
+public class lab08
+{
+  
+  public static void main( String[] args)
+  {
+    Scanner scan = new Scanner( System.in);
+    
+    // constants
+    
+    // variables
+    String namee;
+    String authorr;
+    
+    // program code
+    System.out.println("Enter name for book.");
+    namee = scan.nextLine();
+    System.out.println("Enter name for book.");
+    authorr = scan.nextLine();
+    
+    
+    
+  }
+  
+}

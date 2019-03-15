@@ -1,0 +1,36 @@
+// header comment
+public class Die
+{
+  // properties
+  private int faceValue;
+  
+  // constructors
+  
+  // methods
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public void roll() 
+  {
+    faceValue = (int)(Math.random() * 6 + 1);
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public int getFaceValue() 
+  {
+    //program code
+    return faceValue;
+  }
+  
+
+  
+}

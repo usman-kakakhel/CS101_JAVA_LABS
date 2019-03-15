@@ -1,0 +1,27 @@
+// header comment
+public class TestDiceGame
+{
+  // properties
+  DiceGame diceGame1;
+  
+  // constructors
+  
+  // methods
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public void playTesting() 
+  {
+    //variables
+    int rolls;
+    //program code
+    diceGame1 = new DiceGame();
+    rolls = diceGame1.play();
+    System.out.println("The number of times these dice rolled is : " + rolls);
+  }
+  
+}

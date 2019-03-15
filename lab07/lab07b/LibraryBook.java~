@@ -1,0 +1,83 @@
+// header comment
+public class LibraryBook
+{
+  // properties
+  private String title;
+  private String author;
+  private String dueDate;
+  private int timesLoaned;
+  private boolean loan;
+  
+  // constructors
+  public LibraryBook(String bookName, String authorName, String returnDate, int loanedTime) 
+  {
+    title = bookName;
+    author = authorName;
+    dueDate = returnDate;
+    timesLoaned = loanedTime;
+  }
+  
+  // methods
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public String toString() 
+  {
+    //variables
+    String output;
+    
+    //program code
+    output = ("The Title is : " + title + "\n The author is : " + author + "\n The due date is : " + dueDate + "\n The number of time loaned is : " + timesLoaned);
+    return output;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public boolean onLoan() 
+  {
+    return loan;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public int getTimesLoaned() 
+  {
+    return timesLoaned;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public void loanBook(String dueDateNew) 
+  {
+    dueDate = dueDateNew;
+    timesLoaned++;
+  }
+  
+  /**
+   * This is a brief description of the method.
+   * @param i an example input parameter
+   * @param s another example input 
+   * @return some useful result
+   */
+  public void returnBook() 
+  {
+    dueDate = "";
+  }
+  
+}
