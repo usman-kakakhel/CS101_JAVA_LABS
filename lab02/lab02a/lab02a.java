@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+/**
+ * __program description___ 
+ * @author __Mian Usman Naeem Kakakhel___
+ * @version __11.10.17__
+ */ 
+public class lab02a
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+
+      // constants
+
+      // variables
+
+      // program code
+      System.out.println( "Hello this is my program.");
+
+
+   }
+
+}

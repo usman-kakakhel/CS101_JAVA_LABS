@@ -1,0 +1,40 @@
+public static String reverse(String s)
+  {
+    // constants
+    
+    // variables
+    String ans;
+    int sLength;
+    String s1;
+    String s2;
+    String intermediate;
+    
+    // program code
+    intermediate = "";
+    ans = "";
+    sLength = s.length();
+    s1 = s;
+    boolean recurCheck = false;
+    
+    for (int i = sLength; i > 0; i--)
+    {
+      if ((s.substring(i-1,i)).equals(" ") && recurCheck == false)
+      {
+        s1 = s.substring(i,s.length());
+        s2 = s.substring(0, i-1);
+        recurCheck = true;
+        intermediate = reverse (s2);
+      }
+    }
+    
+    sLength = s1.length();
+    for (int i = sLength; i > 0; i--)
+    {
+      ans = ans + s1.substring(i-1,i);
+    }
+    
+    ans = intermediate + ans + " ";
+    
+    return ans;
+  }
+  

@@ -1,0 +1,159 @@
+import java.util.Scanner;
+
+/**
+ * __lab04a___ 
+ * @author __Mian Usman Naeem Kakakhel___
+ * @version __25-10-2017__
+ */ 
+public class lab04a
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+
+      // constants
+ 
+      // variables
+      int n;
+      int x = 0;
+      int counter5 = 0;
+      // program code
+      System.out.println( "Enter your positive integer.");
+      n = scan.nextInt();
+      
+      
+      if (n <= 0)
+      {
+        System.out.println("Not a positive integer.");
+        System.exit(0);
+      }
+      
+      
+      System.out.println("Output 0 to n in 1 line.");
+      while ((n > x) && (x >= 0))
+      {
+        if(x>0)
+        {
+          System.out.print(x + " ");
+        }
+         x++;
+      }
+      
+      
+      System.out.println();
+      System.out.println("Output 0 to n 5 per line.");
+      x=0;
+      while ((n > counter5) && (counter5 >= 0))
+      {
+        if(counter5>0)
+        {
+          if ( counter5 % 5 == 0)
+          {
+            System.out.print(counter5 + " ");
+            System.out.println();
+          }
+          else
+          {
+            System.out.print(counter5 + " ");
+          }
+        }
+        counter5++;
+      }
+      
+      System.out.println();
+      System.out.println("Output n to 0, inclusive, in 1 line.");
+      x=n;
+      while((n>=x) && (x>=0))
+      {
+        System.out.print(x + " ");
+        x--;
+      }
+      
+      
+      System.out.println();
+      System.out.println("Output -n to +n, only even, inclusive, in 1 line.");
+      x=(-n);
+      while((x>=(-n)) && (x<=n))
+      {
+        if ((x%2 == 0) && (x != 0))
+        System.out.print(x + " ");
+        x++;
+      }
+      
+      
+      System.out.println();
+      System.out.println("Output 0 to +n, squares of only even, inclusive, 5 per line.");
+      x=0;
+      counter5 = 0;
+      while ((n >= x) && (x >= 0))
+      {
+        if ((x%2 == 0) && (x != 0))
+        { 
+          counter5++;
+          if (counter5 % 5 == 0)
+          {
+            System.out.print((int)Math.pow(x, 2) + " ");
+            System.out.println();
+          }
+          else
+          {
+            System.out.print((int)Math.pow(x, 2) + " ");
+          }
+        }
+        x++;
+      }
+      
+      
+      System.out.println();
+      System.out.println("Output n to 3, numbers only divisable by 3 or 4 and not both, inclusive, 5 per line.");
+      x=n;
+      counter5 = 0;
+      while (x >= 3)
+      {
+        if ((((x%3 == 0)||(x%4 == 0))&&(x != 0)) &&! ((x%3 == 0)&&(x%4 == 0)))
+        { 
+          counter5++;
+          if (counter5 % 5 == 0)
+          {
+            System.out.print(x + " ");
+            System.out.println();
+          }
+          else
+          {
+            System.out.print(x + " ");
+          }
+        }
+        x--;
+      }
+      
+      
+      System.out.println();
+      System.out.println("Output 0 to n, all divisors of n, inclusive, in a single line.");
+      x=0;
+      while ((n > x) && (x >= 0))
+      {
+        x++;
+        if ((n%x == 0) && ( x != 1))
+        {
+          System.out.print(x + " ");
+        }
+      }
+      
+      
+      float sum;
+      System.out.println();
+      System.out.println("Output n to 1, 1/k of all numbers, inclusive, in a single line.");
+      x=n;
+      while  (x >= 1)
+      {
+        sum = (1/(float)x);
+        if (sum >= 0.01)
+        {       
+        System.out.printf("%-3.2f ", sum);
+        }
+        x--;
+      }
+      
+   }
+
+}

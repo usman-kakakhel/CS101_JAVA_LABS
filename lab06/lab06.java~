@@ -1,0 +1,307 @@
+import java.util.Scanner;
+
+/**
+ * __Lab 06___ 
+ * @author __Mian Usman Naeem Kakakhel___
+ * @version __08-11-2017__
+ */ 
+public class lab06
+{
+  //Taylor series Fixed based SIN
+  public static double sin(double x)
+  { 
+    //variables
+    int num;
+    double ans;
+    double lastTerm;
+    
+    //program code
+    ans = 0;
+    lastTerm = 0;
+    
+    //x = x % 360;
+    //x = (x*(Math.PI/180));
+    
+    for (int i = 0; i <= 10; i++)
+    {
+      if(i==0) 
+      {
+        lastTerm = ((double)power(-1,i) / factorial(2*i + 1)) * power(x,2*i + 1);
+      }
+      else
+      {
+        lastTerm = ( power(-1,i) *Math.abs(lastTerm * power(x, 2) ) / ((2*i)*((2*i)+1)) );
+      }
+      ans = ans + lastTerm;
+    }
+    return(ans);
+  }
+  
+  
+  public static double power(double x, int y)
+  {
+    // constants
+    
+    // variables
+    double ans;
+    
+    // program code
+    ans = 1;
+    if (y > 0)
+    {
+      for (int i = 0; y > i; i++)
+      {
+        ans = ans * x;
+      }
+    }
+    
+    return ans;
+  }
+  
+  public static long factorial(int n)
+  {
+    // constants
+    
+    // variables
+    long ans;
+    
+    // program code
+    ans = 1;
+    
+    for (int i = n; i > 0; i--)
+    {
+      ans = ans * i;
+    }
+    return ans;
+  }
+  
+  public static String reverse(String s)
+  {
+    // constants
+    
+    // variables
+    String ans;
+    int sLength;
+    String s1;
+    String s2;
+    String intermediate;
+    
+    // program code
+    intermediate = "";
+    ans = "";
+    sLength = s.length();
+    s1 = s;
+    boolean recurCheck = false;
+    
+    for (int i = sLength; i > 0; i--)
+    {
+      if ((s.substring(i-1,i)).equals(" ") && recurCheck == false)
+      {
+        s1 = s.substring(i,s.length());
+        s2 = s.substring(0, i-1);
+        recurCheck = true;
+        intermediate = reverse (s2);
+      }
+    }
+    
+    sLength = s1.length();
+    for (int i = sLength; i > 0; i--)
+    {
+      ans = ans + s1.substring(i-1,i);
+    }
+    
+    ans = intermediate + ans + " ";
+    
+    return ans;
+  }
+  
+  
+  
+  
+  public static int toDecimal( String base2)
+  {
+    // constants
+    
+    // variables
+    int ans;
+    int sLength;
+    String currentBinary;
+    int powCount;
+    
+    // program code
+    ans = 0;
+    sLength = base2.length();
+    powCount = 0;
+    
+    for (int i = sLength; i > 0; i--)
+    {
+      currentBinary = base2.substring(i-1,i);
+      if (currentBinary.equals("1"))
+      {
+        ans = ans + (int)power(2,powCount);
+      }
+      powCount++;
+    }
+    return ans;
+  }
+  
+  public static String toBinary(int base10)
+  { 
+    // variables
+    String ans;
+    double maxPow;
+    int i;
+    
+    // program code
+    i = 0;
+    ans = "";
+    maxPow = 0;
+    
+    
+    while (base10 >= maxPow)
+    {
+      maxPow = power(2,i);
+      i++;
+    }
+    i = i - 2;
+    maxPow = power(2,i); 
+    
+    
+    while (i >= 0)
+    {
+      if (base10 >= maxPow)
+      {
+        base10 = base10 - (int)maxPow;
+        ans = ans + "1";
+      }
+      else
+      {
+        ans = ans + "0";
+      }
+      i--;
+      maxPow = power(2,i);
+    }
+    
+    return ans;
+  }
+  
+  public static void gaps(String s, int gaps)
+  {
+    // constants
+    
+    // variables
+    
+    // program code
+    gaps = gaps - s.length();
+    
+    for (int x = 0; x < gaps; x++)
+    {
+      System.out.print(" ");
+    }
+  }
+  
+  
+  public static void main( String[] args)
+  {
+    Scanner scan = new Scanner( System.in);
+    
+    // constants
+    
+    // variables
+    String out;
+    String base2;
+    int base10;
+    double x;
+    double sin;
+    double sinWorking;
+    String reversedLine;
+    
+    //boolean binaryCheck;
+    
+    // program code
+    
+    for (int n = -1; n <= 10; n++)
+    {
+      for (int p = 1; p <= 4; p++)
+      { 
+        out = (int)power(n,p) + "";
+        System.out.print(out);
+        gaps(out,6);
+      }
+      System.out.println();
+    }
+    
+    
+    
+    for (int a = 1; a < 15; a++)
+    {
+      System.out.print(a);
+      out = a + "";
+      gaps(out,6);
+      System.out.println(factorial(a));
+    }
+    
+    
+    
+    System.out.println("Enter first base2 value.");
+    base2 = scan.nextLine();
+    base10 = toDecimal(base2);
+    System.out.println("Enter second base2 value.");
+    base2 = scan.nextLine();
+    base10 = base10 + toDecimal(base2);
+    System.out.println("Sum of two binaries is: " + toBinary(base10));
+    
+    
+    System.out.println("Enter sentence to reverse.");
+    reversedLine = scan.nextLine();
+    //reversedLine = reverse(scan.nextLine());
+
+    String s = reversedLine;
+    String s1;
+      int i = s.length();
+    while (i>0)
+    {
+      i = s.length();
+    if ((s.substring(i-1,i)).equals(" "))
+      {
+        s1 = s.substring(i,s.length());
+        reversedLine = reverse(s1) + reversedLine;
+        s = s.substring(0, i-1);
+      
+    }
+      i--;
+    }
+    System.out.println(reversedLine);
+    
+    
+    sin = 0;
+    System.out.println("Enter value for sin");
+    x = scan.nextDouble();
+    x = x % 360;
+    x = (x * (Math.PI/180));
+    
+    for (int n = 0; n < 10; n++)
+    {
+      sinWorking = (power(-1,n) / factorial(2*n + 1)) * power(x,2*n + 1);
+      sin = sin + sinWorking;
+      System.out.print(n);
+      gaps(n + "",3);
+      System.out.print(power(-1,n));
+      gaps(power(-1,n) + "",6);
+      System.out.print(power(x,2*n + 1));
+      gaps(power(x,2*n + 1) + "",25);
+      System.out.print(factorial(2*n + 1));
+      gaps(factorial(2*n + 1) + "",25);
+      System.out.print(sinWorking);
+      gaps(sinWorking + "",25);
+      System.out.print(sin);
+      System.out.println();
+    }
+    
+
+    System.out.println("Value of taylor: " +  sin(x) + " Value of Math.sin: " + Math.sin(x) );
+    
+
+  }
+  
+}

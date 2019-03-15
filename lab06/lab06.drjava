@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20160913-225446">
+  <project autorefresh="false" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="lab06.java" package="" timestamp="05-Nov-2017 18:14:57">
+        <select from="6219" to="6219"/>
+        <scroll column="6054" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches>
+      <watch name="out"/>
+      <watch name="i"/>
+      <watch name="s"/>
+      <watch name="s1"/>
+    </watches>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>

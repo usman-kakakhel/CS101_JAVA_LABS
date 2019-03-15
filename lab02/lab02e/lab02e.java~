@@ -1,0 +1,49 @@
+
+
+import java.util.Scanner;
+
+/**
+ * __program description___ 
+ * @author __Mian Usman Naeem Kakakhel___
+ * @version __11.10.17__
+ */ 
+
+public class lab02e
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+      //variables
+      String name;
+      int age;
+      double salary;
+      String comments;
+      
+      //constants
+      final String htmlopen = "<html>" ;
+      final String htmlclose = "</html>" ;
+      final String headopen = "<head>" ;
+      final String headclose = "</head>" ;
+      final String titleopen = "<title>" ;
+      final String titleclose = "</title>" ;
+      final String hr = "<hr>" ;
+      final String h1open = "<h1>" ;
+      final String h1close = "</h1>" ;
+      final String bodyopen = "<body>" ;
+      final String bodyclose = "</body>" ;
+      final String popen = "<p>" ;
+      final String pclose = "</p>" ;
+      //program code
+      name = scan.nextLine();
+   
+      age = scan.nextInt();
+
+      salary = scan.nextDouble();
+      
+      scan.nextLine();
+              
+      comments = scan.nextLine();
+      
+      System.out.println( "<!DOCTYPE html>" + htmlopen + headopen + titleopen+ name + "'s Home Page" + titleclose + headclose + bodyopen +hr + h1open + name + h1close + popen + "Age: " + age + pclose + popen + "Salary: " + salary + pclose + popen + "Comments: " + comments + pclose + hr + bodyclose + htmlclose);
+   }
+}

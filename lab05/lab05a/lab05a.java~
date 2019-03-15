@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+/**
+ * __lab05a___ 
+ * @author __Mian Usman Naeem Kakakhel___
+ * @version __1-11-2017__
+ */ 
+public class lab05a
+{
+  public static void main( String[] args)
+  {
+    Scanner scan = new Scanner( System.in);
+    
+    // constants
+    
+    // variables
+    int width;
+    int hieght;
+    int thickness;
+    String make;
+    boolean exit;
+    // program code
+    exit = true;
+    do
+    {
+      
+      System.out.println("Please enter positive value for width, hieght and thickness. Put gaps between all.");
+      width = scan.nextInt();
+      hieght = scan.nextInt();
+      thickness = scan.nextInt();
+      
+      if ((width <= 0) || (hieght <= 0) || (thickness <= 0))
+      {
+        System.out.println("Error: all values must be positive.");
+        //System.exit(0);
+        exit = false;
+      }
+      
+      if (((thickness *2) >= width)||((thickness *2) >= hieght))
+      {
+        System.out.println("OOps.. no hole.");
+        
+      }
+      
+      
+      for (int i = 0; hieght > i; i++)
+      {
+        for (int j=0 ; width > j; j++)
+        {
+          if ((i >= thickness)&&(i < (hieght - thickness)))
+          {
+            if ((j>=thickness)&&(j < (width - thickness)))
+            {
+              System.out.print(" ");
+            }
+            else
+            {
+              System.out.print("*"); 
+            }
+            
+          }
+          else
+          {
+            System.out.print("*"); 
+          }
+        }
+        System.out.println();
+      }
+      if (exit = true)
+      {
+        System.out.println("Do you want to make another rectangle? press Y,y or N,n.");
+        make = scan.next();
+        if ( (make.equals("N")) || (make.equals("n")))
+        {
+          System.out.println("Good bye"); 
+          //System.exit(0);
+          exit = false;
+        }
+      }
+      
+    }while (exit == true);
+    
+    
+  }
+  
+}
